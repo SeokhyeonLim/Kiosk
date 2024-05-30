@@ -1,0 +1,172 @@
+/* src/MainMenu/ShoppingCss/ShoppingCart.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.ShoppingCart-Container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 1000;
+  font-family: "Roboto", sans-serif;
+}
+
+.ShoppingCart-Header {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.ShoppingCart-Header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+}
+
+.ShoppingCart-Main {
+  padding: 20px;
+}
+
+.ShoppingCart-Item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.ShoppingCart-ItemName {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: #333;
+}
+
+.ShoppingCart-ItemPrice {
+  color: #555;
+  margin: 0;
+}
+
+.ShoppingCart-ItemControls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.ShoppingCart-ItemControls button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+  font-family: "Roboto", sans-serif;
+}
+
+.ShoppingCart-ItemControls button:hover {
+  background-color: #0056b3;
+}
+
+.ShoppingCart-ItemControls span {
+  margin: 0 10px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #333;
+}
+
+.ShoppingCart-Pay {
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.ShoppingCart-Pay button {
+  background-color: #2575fc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  font-family: "Roboto", sans-serif;
+}
+
+.ShoppingCart-Pay button:hover {
+  background-color: rgb(29, 125, 215);
+}
+
+/* 반응형 웹페이지 스타일 추가 */
+@media (max-width: 1200px) {
+  .ShoppingCart-Container {
+    width: 250px; /* 장바구니 너비 줄이기 */
+  }
+
+  .ShoppingCart-Main button,
+  .ShoppingCart-Pay button {
+    padding: 4px 8px; /* 버튼 크기 조정 */
+  }
+}
+
+@media (max-width: 1024px) and (min-height: 600px) {
+  .ShoppingCart-Container {
+    width: 250px; /* 1024*600 해상도에서 장바구니 너비 줄이기 */
+  }
+
+  .ShoppingCart-Main button,
+  .ShoppingCart-Pay button {
+    padding: 4px 8px; /* 버튼 크기 조정 */
+    font-size: 14px; /* 버튼 폰트 크기 조정 */
+  }
+}
+
+@media (max-width: 768px) {
+  .ShoppingCart-Container {
+    width: 200px; /* 장바구니 너비 더 줄이기 */
+  }
+
+  .ShoppingCart-Header,
+  .ShoppingCart-Main,
+  .ShoppingCart-Pay {
+    padding: 16px; /* 내부 패딩 줄이기 */
+  }
+
+  .ShoppingCart-Main button,
+  .ShoppingCart-Pay button {
+    padding: 3px 6px; /* 버튼 크기 더 줄이기 */
+    font-size: 14px; /* 버튼 폰트 크기 조정 */
+  }
+}
+
+@media (max-width: 480px) {
+  .ShoppingCart-Container {
+    width: 100%; /* 장바구니 너비를 화면 전체로 설정 */
+    height: 50%; /* 장바구니 높이를 화면의 절반으로 설정 */
+    bottom: 0;
+    top: auto; /* 상단 고정을 해제하고 하단에 고정 */
+  }
+
+  .ShoppingCart-Header,
+  .ShoppingCart-Main,
+  .ShoppingCart-Pay {
+    padding: 12px; /* 내부 패딩 더 줄이기 */
+  }
+
+  .ShoppingCart-Main button,
+  .ShoppingCart-Pay button {
+    padding: 2px 4px; /* 버튼 크기 더 줄이기 */
+    font-size: 12px; /* 버튼 폰트 크기 조정 */
+  }
+}
