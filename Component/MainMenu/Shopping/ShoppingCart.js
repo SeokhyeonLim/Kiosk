@@ -45,6 +45,21 @@ function ShoppingCart({ items, removeFromCart, onCheckout }) {
     setPackageSelectOpen(false);
   };
 
+  // 메뉴를 모두 삭제할 때 상태 초기화
+  const removeAllItems = () => {
+    setItemCounts({});
+  };
+
+  // 개별 아이템 삭제 시 수량도 제거
+  const handleRemoveItem = (item) => {
+    removeFromCart(item);
+    setItemCounts((prevCounts) => {
+      const updatedCounts = { ...prevCounts };
+      delete updatedCounts[item.name];
+      return updatedCounts;
+    });
+  };
+
   const electCal = (price) => {
     const basePrice = 4000;
     const baseDuration = 120; // 2 hours in minutes
@@ -93,7 +108,7 @@ function ShoppingCart({ items, removeFromCart, onCheckout }) {
             {parseInt(item.price).toLocaleString()}원
           </p>
           <div className="ShoppingCart-ItemControls">
-            <button onClick={() => removeFromCart(item)}>메뉴 빼기</button>
+            <button onClick={() => handleRemoveItem(item)}>메뉴 빼기</button>
             <button onClick={() => handleDecrement(item.name)}>-</button>
             <span>{itemCounts[item.name] || 1}</span>
             <button onClick={() => handleIncrement(item.name)}>+</button>
